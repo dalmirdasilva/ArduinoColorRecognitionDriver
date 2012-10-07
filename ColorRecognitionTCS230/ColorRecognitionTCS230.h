@@ -126,7 +126,7 @@ private:
     int whiteBalanceFrequencies[3];
 
     /**
-     * Color enumeration.
+     * Filter color enumeration.
      */
     enum Filter {
         RED_FILTER,
