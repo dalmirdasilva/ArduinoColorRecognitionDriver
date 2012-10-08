@@ -1,4 +1,3 @@
-#include <TimerOne.h>
 #include <ColorRecognition.h>
 #include <ColorRecognitionTCS230PI.h>
 

@@ -1,5 +1,5 @@
 /**
- * Arduino - Ultrasound distance sensor
+ * Arduino - Color Recognition Sensor
  * 
  * ColorRecognitionTCS230PI.h
  * 
