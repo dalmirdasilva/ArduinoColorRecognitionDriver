@@ -1,5 +1,5 @@
 ARDUINO_LIB_PATH=/usr/share/arduino/libraries
-LIB_LIST=ColorRecognition ColorRecognitionTCS230
+LIB_LIST=ColorRecognition ColorRecognitionTCS230 ColorRecognitionTCS230PI
 SOURCE_PATH=`pwd`
 
 all: 

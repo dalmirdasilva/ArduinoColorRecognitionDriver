@@ -1,18 +1,17 @@
 /**
  * Arduino - Ultrasound distance sensor
  * 
- * ColorRecognitionTCS230.h
+ * ColorRecognitionTCS230PI.h
  * 
  * The abstract class for the Color Recognition TCS230 sensor.
  * 
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
-#ifndef __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_H__
-#define __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_H__ 1
+#ifndef __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_PI_H__
+#define __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_PI_H__ 1
 
 #include <Arduino.h>
-#include <TimerOne.h>
 #include <ColorRecognition.h>
 
 /**
@@ -77,23 +76,9 @@
  * present in an area over a given time period. 
  */
 
-/**
- * When used with a BASIC Stamp, the TCS230's output frequency can be read using
- * the Stamp's statement, as shown in the example code on the front side of this
- * sheet. In this example, and were both pulled "high", enabling the TCS230's 
- * fastest output rate. However, this rate can be as much as 600KHz or more at 
- * maximum light intensity
- * 
- * MAX: 600KHz (I don't belive)
- * we are usin: 2% of such frequence
- * we are usin: 1 second between the interrupts.
- * 
- * (600 * 2 / 100) * 1000 it is too much.
- * 
- */
-#define MAX_FRQUENCY_IN_HZ 1000
+#define SAMPLES   32
 
-class ColorRecognitionTCS230 : public ColorRecognition {
+class ColorRecognitionTCS230PI : public ColorRecognition {
 private:
 
     /**
@@ -112,27 +97,17 @@ private:
      * NOTE: It must be the 2 or 3 pin to support external interrupts.
      */
     unsigned char outPin;
-
+    
     /**
-     * Holds the number of interrupts of the current filter.
+     * The minimum frequency.
      */
-    int count;
-
+    long minFrequency[3];
+    
     /**
-     * Holds the last count for each filter.
+     * The maximum frequency.
      */
-    int lastFrequencies[3];
-
-    /**
-     * Holds the maximum frequencies.
-     */
-    int whiteBalanceFrequencies[3];
-
-    /**
-     * Singleton. The instance.
-     */
-    static ColorRecognitionTCS230 instance;
-
+    long maxFrequency[3];
+    
 public:
 
     /**
@@ -146,37 +121,23 @@ public:
     };
 
     /**
-     * Current filter.
+     * Private constructor.
      */
-    Filter currentFilter;
+    ColorRecognitionTCS230PI(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin);
 
     /**
-     * Singleton. Gets the instance of the driver.
+     * Store the current read as the minimum frequency for each color.
      * 
-     * @return 
+     * It tells what is considered black.
      */
-    static ColorRecognitionTCS230* getInstance() {
-        return &ColorRecognitionTCS230::instance;
-    }
-
-    /**
-     * Initializes the IO and timers.
-     * 
-     * @param outPin                The out pin. (NOTE: It must be the 2 or 3 
-     *                              pin to support external interrupts).
-     * @param s2Pin                 The s2 pin.
-     * @param s3Pin                 The s3 pin.
-     * 
-     * @return 
-     */
-    void initialize(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin);
+    void adjustWhiteBalance();
 
     /**
      * Store the current read as the maximum frequency for each color.
      * 
      * It tells what is considered white.
      */
-    void adjustWhiteBalance();
+    void adjustBlackBalance();
 
     /**
      * Returns the red color intensity.
@@ -207,6 +168,15 @@ public:
     bool fillRGB(unsigned char buf[3]);
 
     /**
+     * Gets the frequency from the out pin.
+     * 
+     * NOTE: It uses pulseIn, collects some samples and calculate the frequency.
+     * 
+     * @return          The pin frequency.
+     */
+    long getFrequency(unsigned int samples);
+
+    /**
      * Sets the s2 and s3 pins according of the color passed as filter.
      * 
      * <pre>
@@ -219,28 +189,8 @@ public:
      * 
      * @param filter        The next filter.
      */
-    static void setFilter(Filter filter);
+    void setFilter(Filter filter);
 
-private:
-
-    /**
-     * Private constructor.
-     */
-    ColorRecognitionTCS230() {
-        whiteBalanceFrequencies[0] = MAX_FRQUENCY_IN_HZ;
-        whiteBalanceFrequencies[1] = MAX_FRQUENCY_IN_HZ;
-        whiteBalanceFrequencies[2] = MAX_FRQUENCY_IN_HZ;
-    }
-
-    /**
-     * Device output interruption handler.
-     */
-    static void externalInterruptHandler();
-
-    /**
-     * TimerOne interrupt handler.
-     */
-    static void timerInterruptHandler();
 };
 
-#endif /* __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_H__ */
+#endif /* __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_PI_H__ */
