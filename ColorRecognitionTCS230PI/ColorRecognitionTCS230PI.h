@@ -172,6 +172,16 @@ public:
      * 
      * NOTE: It uses pulseIn, collects some samples and calculate the frequency.
      * 
+     * 
+     * The out pin generates a square wave, we sum the times between the raise 
+     * edge and divide by the number of samples.
+     * 
+     *        1       2       3
+     * ----   -----   -----   -----
+     *    |   |   |   |   |   |
+     *    -----   -----   -----
+     * 
+     * 
      * @return          The pin frequency.
      */
     long getFrequency(unsigned int samples);
