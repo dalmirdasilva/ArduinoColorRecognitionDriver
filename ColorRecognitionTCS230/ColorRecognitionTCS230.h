@@ -139,10 +139,7 @@ public:
      * Filter color enumeration.
      */
     enum Filter {
-        RED_FILTER,
-        GREEN_FILTER,
-        BLUE_FILTER,
-        CLEAR_FILTER
+        RED_FILTER, GREEN_FILTER, BLUE_FILTER, CLEAR_FILTER
     };
 
     /**
@@ -169,7 +166,8 @@ public:
      * 
      * @return 
      */
-    void initialize(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin);
+    void initialize(unsigned char outPin, unsigned char s2Pin,
+            unsigned char s3Pin);
 
     /**
      * Store the current read as the maximum frequency for each color.

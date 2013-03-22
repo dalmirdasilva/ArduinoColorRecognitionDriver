@@ -13,7 +13,8 @@
 
 #include "ColorRecognitionTCS230PI.h"
 
-ColorRecognitionTCS230PI::ColorRecognitionTCS230PI(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin) {
+ColorRecognitionTCS230PI::ColorRecognitionTCS230PI(unsigned char outPin,
+        unsigned char s2Pin, unsigned char s3Pin) {
     this->s2Pin = s2Pin;
     this->s3Pin = s3Pin;
     this->outPin = outPin;
@@ -59,6 +60,7 @@ bool ColorRecognitionTCS230PI::fillRGB(unsigned char buf[3]) {
     buf[0] = getRed();
     buf[1] = getGreen();
     buf[2] = getBlue();
+    return true;
 }
 
 void ColorRecognitionTCS230PI::setFilter(Filter filter) {

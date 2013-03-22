@@ -93,37 +93,33 @@ private:
 
     /**
      * The out pin.
-     * 
-     * NOTE: It must be the 2 or 3 pin to support external interrupts.
      */
     unsigned char outPin;
-    
+
     /**
      * The minimum frequency.
      */
     long minFrequency[3];
-    
+
     /**
      * The maximum frequency.
      */
     long maxFrequency[3];
-    
+
 public:
 
     /**
      * Filter color enumeration.
      */
     enum Filter {
-        RED_FILTER,
-        GREEN_FILTER,
-        BLUE_FILTER,
-        CLEAR_FILTER
+        RED_FILTER, GREEN_FILTER, BLUE_FILTER, CLEAR_FILTER
     };
 
     /**
      * Private constructor.
      */
-    ColorRecognitionTCS230PI(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin);
+    ColorRecognitionTCS230PI(unsigned char outPin, unsigned char s2Pin,
+            unsigned char s3Pin);
 
     /**
      * Store the current read as the minimum frequency for each color.

@@ -9,7 +9,7 @@ void setup() {
   tcs230->initialize(2, 3, 4);
   
   Serial.print("Adjusting the white balance... show something white to the sensor.");
-  // Show somethign white to him during 4 seconds.
+  // Show somethign white to it during 4 seconds.
   tcs230->adjustWhiteBalance();
   
   while (1) {

@@ -15,7 +15,8 @@
 
 ColorRecognitionTCS230 ColorRecognitionTCS230::instance;
 
-void ColorRecognitionTCS230::initialize(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin) {
+void ColorRecognitionTCS230::initialize(unsigned char outPin,
+        unsigned char s2Pin, unsigned char s3Pin) {
     this->s2Pin = s2Pin;
     this->s3Pin = s3Pin;
     this->outPin = outPin;
@@ -33,7 +34,7 @@ void ColorRecognitionTCS230::adjustWhiteBalance() {
     instance.whiteBalanceFrequencies[0] = instance.lastFrequencies[0];
     instance.whiteBalanceFrequencies[1] = instance.lastFrequencies[1];
     instance.whiteBalanceFrequencies[2] = instance.lastFrequencies[2];
-    
+
 }
 
 void ColorRecognitionTCS230::externalInterruptHandler() {
@@ -75,9 +76,10 @@ unsigned char ColorRecognitionTCS230::getBlue() {
 }
 
 bool ColorRecognitionTCS230::fillRGB(unsigned char buf[3]) {
-     buf[0] = getRed();
-     buf[1] = getGreen();
-     buf[2] = getBlue();
+    buf[0] = getRed();
+    buf[1] = getGreen();
+    buf[2] = getBlue();
+    return true;
 }
 
 void ColorRecognitionTCS230::setFilter(Filter filter) {
