@@ -1,0 +1,898 @@
+In archive libArduinoColorRecognitionSensor.a:
+
+ColorRecognitionTCS230PI.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000003e0  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000018  00000000  00000000  00000414  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, DATA
+  2 .bss          00000000  00000000  00000000  0000042c  2**0
+                  ALLOC
+Disassembly of section .text:
+
+00000000 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>:
+   0:	ef 92       	push	r14
+   2:	ff 92       	push	r15
+   4:	0f 93       	push	r16
+   6:	1f 93       	push	r17
+   8:	8c 01       	movw	r16, r24
+   a:	7b 01       	movw	r14, r22
+   c:	dc 01       	movw	r26, r24
+   e:	ed 91       	ld	r30, X+
+  10:	fc 91       	ld	r31, X
+  12:	01 90       	ld	r0, Z+
+  14:	f0 81       	ld	r31, Z
+  16:	e0 2d       	mov	r30, r0
+  18:	09 95       	icall
+  1a:	f7 01       	movw	r30, r14
+  1c:	80 83       	st	Z, r24
+  1e:	d8 01       	movw	r26, r16
+  20:	ed 91       	ld	r30, X+
+  22:	fc 91       	ld	r31, X
+  24:	02 80       	ldd	r0, Z+2	; 0x02
+  26:	f3 81       	ldd	r31, Z+3	; 0x03
+  28:	e0 2d       	mov	r30, r0
+  2a:	c8 01       	movw	r24, r16
+  2c:	09 95       	icall
+  2e:	f7 01       	movw	r30, r14
+  30:	81 83       	std	Z+1, r24	; 0x01
+  32:	d8 01       	movw	r26, r16
+  34:	ed 91       	ld	r30, X+
+  36:	fc 91       	ld	r31, X
+  38:	04 80       	ldd	r0, Z+4	; 0x04
+  3a:	f5 81       	ldd	r31, Z+5	; 0x05
+  3c:	e0 2d       	mov	r30, r0
+  3e:	c8 01       	movw	r24, r16
+  40:	09 95       	icall
+  42:	f7 01       	movw	r30, r14
+  44:	82 83       	std	Z+2, r24	; 0x02
+  46:	81 e0       	ldi	r24, 0x01	; 1
+  48:	1f 91       	pop	r17
+  4a:	0f 91       	pop	r16
+  4c:	ff 90       	pop	r15
+  4e:	ef 90       	pop	r14
+  50:	08 95       	ret
+
+00000052 <_ZN24ColorRecognitionTCS230PI12getFrequencyEj>:
+  52:	af 92       	push	r10
+  54:	bf 92       	push	r11
+  56:	cf 92       	push	r12
+  58:	df 92       	push	r13
+  5a:	ef 92       	push	r14
+  5c:	ff 92       	push	r15
+  5e:	0f 93       	push	r16
+  60:	1f 93       	push	r17
+  62:	cf 93       	push	r28
+  64:	df 93       	push	r29
+  66:	5c 01       	movw	r10, r24
+  68:	6b 01       	movw	r12, r22
+  6a:	ee 24       	eor	r14, r14
+  6c:	ff 24       	eor	r15, r15
+  6e:	87 01       	movw	r16, r14
+  70:	c0 e0       	ldi	r28, 0x00	; 0
+  72:	d0 e0       	ldi	r29, 0x00	; 0
+  74:	00 c0       	rjmp	.+0      	; 0x76 <_ZN24ColorRecognitionTCS230PI12getFrequencyEj+0x24>
+  76:	f5 01       	movw	r30, r10
+  78:	84 81       	ldd	r24, Z+4	; 0x04
+  7a:	61 e0       	ldi	r22, 0x01	; 1
+  7c:	20 e9       	ldi	r18, 0x90	; 144
+  7e:	30 ed       	ldi	r19, 0xD0	; 208
+  80:	43 e0       	ldi	r20, 0x03	; 3
+  82:	50 e0       	ldi	r21, 0x00	; 0
+  84:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+  88:	9b 01       	movw	r18, r22
+  8a:	ac 01       	movw	r20, r24
+  8c:	60 e2       	ldi	r22, 0x20	; 32
+  8e:	71 ea       	ldi	r23, 0xA1	; 161
+  90:	87 e0       	ldi	r24, 0x07	; 7
+  92:	90 e0       	ldi	r25, 0x00	; 0
+  94:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+  98:	e2 0e       	add	r14, r18
+  9a:	f3 1e       	adc	r15, r19
+  9c:	04 1f       	adc	r16, r20
+  9e:	15 1f       	adc	r17, r21
+  a0:	21 96       	adiw	r28, 0x01	; 1
+  a2:	cc 15       	cp	r28, r12
+  a4:	dd 05       	cpc	r29, r13
+  a6:	00 f0       	brcs	.+0      	; 0xa8 <_ZN24ColorRecognitionTCS230PI12getFrequencyEj+0x56>
+  a8:	96 01       	movw	r18, r12
+  aa:	40 e0       	ldi	r20, 0x00	; 0
+  ac:	50 e0       	ldi	r21, 0x00	; 0
+  ae:	c8 01       	movw	r24, r16
+  b0:	b7 01       	movw	r22, r14
+  b2:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+  b6:	ca 01       	movw	r24, r20
+  b8:	b9 01       	movw	r22, r18
+  ba:	df 91       	pop	r29
+  bc:	cf 91       	pop	r28
+  be:	1f 91       	pop	r17
+  c0:	0f 91       	pop	r16
+  c2:	ff 90       	pop	r15
+  c4:	ef 90       	pop	r14
+  c6:	df 90       	pop	r13
+  c8:	cf 90       	pop	r12
+  ca:	bf 90       	pop	r11
+  cc:	af 90       	pop	r10
+  ce:	08 95       	ret
+
+000000d0 <_ZN24ColorRecognitionTCS230PI9setFilterENS_6FilterE>:
+  d0:	1f 93       	push	r17
+  d2:	cf 93       	push	r28
+  d4:	df 93       	push	r29
+  d6:	ec 01       	movw	r28, r24
+  d8:	16 2f       	mov	r17, r22
+  da:	63 30       	cpi	r22, 0x03	; 3
+  dc:	01 f0       	breq	.+0      	; 0xde <_ZN24ColorRecognitionTCS230PI9setFilterENS_6FilterE+0xe>
+  de:	60 e0       	ldi	r22, 0x00	; 0
+  e0:	11 30       	cpi	r17, 0x01	; 1
+  e2:	01 f4       	brne	.+0      	; 0xe4 <_ZN24ColorRecognitionTCS230PI9setFilterENS_6FilterE+0x14>
+  e4:	61 e0       	ldi	r22, 0x01	; 1
+  e6:	8a 81       	ldd	r24, Y+2	; 0x02
+  e8:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+  ec:	60 e0       	ldi	r22, 0x00	; 0
+  ee:	11 50       	subi	r17, 0x01	; 1
+  f0:	12 30       	cpi	r17, 0x02	; 2
+  f2:	00 f4       	brcc	.+0      	; 0xf4 <_ZN24ColorRecognitionTCS230PI9setFilterENS_6FilterE+0x24>
+  f4:	61 e0       	ldi	r22, 0x01	; 1
+  f6:	8b 81       	ldd	r24, Y+3	; 0x03
+  f8:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+  fc:	df 91       	pop	r29
+  fe:	cf 91       	pop	r28
+ 100:	1f 91       	pop	r17
+ 102:	08 95       	ret
+
+00000104 <_ZN24ColorRecognitionTCS230PI18adjustBlackBalanceEv>:
+ 104:	ff 92       	push	r15
+ 106:	0f 93       	push	r16
+ 108:	1f 93       	push	r17
+ 10a:	cf 93       	push	r28
+ 10c:	df 93       	push	r29
+ 10e:	f8 2e       	mov	r15, r24
+ 110:	09 2f       	mov	r16, r25
+ 112:	9c 01       	movw	r18, r24
+ 114:	e9 01       	movw	r28, r18
+ 116:	10 e0       	ldi	r17, 0x00	; 0
+ 118:	8f 2d       	mov	r24, r15
+ 11a:	90 2f       	mov	r25, r16
+ 11c:	61 2f       	mov	r22, r17
+ 11e:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 122:	8f 2d       	mov	r24, r15
+ 124:	90 2f       	mov	r25, r16
+ 126:	6f ef       	ldi	r22, 0xFF	; 255
+ 128:	70 e0       	ldi	r23, 0x00	; 0
+ 12a:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 12e:	6d 83       	std	Y+5, r22	; 0x05
+ 130:	7e 83       	std	Y+6, r23	; 0x06
+ 132:	8f 83       	std	Y+7, r24	; 0x07
+ 134:	98 87       	std	Y+8, r25	; 0x08
+ 136:	1f 5f       	subi	r17, 0xFF	; 255
+ 138:	24 96       	adiw	r28, 0x04	; 4
+ 13a:	13 30       	cpi	r17, 0x03	; 3
+ 13c:	01 f4       	brne	.+0      	; 0x13e <_ZN24ColorRecognitionTCS230PI18adjustBlackBalanceEv+0x3a>
+ 13e:	df 91       	pop	r29
+ 140:	cf 91       	pop	r28
+ 142:	1f 91       	pop	r17
+ 144:	0f 91       	pop	r16
+ 146:	ff 90       	pop	r15
+ 148:	08 95       	ret
+
+0000014a <_ZN24ColorRecognitionTCS230PI18adjustWhiteBalanceEv>:
+ 14a:	ff 92       	push	r15
+ 14c:	0f 93       	push	r16
+ 14e:	1f 93       	push	r17
+ 150:	cf 93       	push	r28
+ 152:	df 93       	push	r29
+ 154:	f8 2e       	mov	r15, r24
+ 156:	09 2f       	mov	r16, r25
+ 158:	9c 01       	movw	r18, r24
+ 15a:	e9 01       	movw	r28, r18
+ 15c:	10 e0       	ldi	r17, 0x00	; 0
+ 15e:	8f 2d       	mov	r24, r15
+ 160:	90 2f       	mov	r25, r16
+ 162:	61 2f       	mov	r22, r17
+ 164:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 168:	8f 2d       	mov	r24, r15
+ 16a:	90 2f       	mov	r25, r16
+ 16c:	6f ef       	ldi	r22, 0xFF	; 255
+ 16e:	70 e0       	ldi	r23, 0x00	; 0
+ 170:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 174:	69 8b       	std	Y+17, r22	; 0x11
+ 176:	7a 8b       	std	Y+18, r23	; 0x12
+ 178:	8b 8b       	std	Y+19, r24	; 0x13
+ 17a:	9c 8b       	std	Y+20, r25	; 0x14
+ 17c:	1f 5f       	subi	r17, 0xFF	; 255
+ 17e:	24 96       	adiw	r28, 0x04	; 4
+ 180:	13 30       	cpi	r17, 0x03	; 3
+ 182:	01 f4       	brne	.+0      	; 0x184 <_ZN24ColorRecognitionTCS230PI18adjustWhiteBalanceEv+0x3a>
+ 184:	df 91       	pop	r29
+ 186:	cf 91       	pop	r28
+ 188:	1f 91       	pop	r17
+ 18a:	0f 91       	pop	r16
+ 18c:	ff 90       	pop	r15
+ 18e:	08 95       	ret
+
+00000190 <_ZN24ColorRecognitionTCS230PI7getBlueEv>:
+ 190:	af 92       	push	r10
+ 192:	bf 92       	push	r11
+ 194:	cf 92       	push	r12
+ 196:	df 92       	push	r13
+ 198:	ef 92       	push	r14
+ 19a:	ff 92       	push	r15
+ 19c:	0f 93       	push	r16
+ 19e:	1f 93       	push	r17
+ 1a0:	8c 01       	movw	r16, r24
+ 1a2:	62 e0       	ldi	r22, 0x02	; 2
+ 1a4:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 1a8:	c8 01       	movw	r24, r16
+ 1aa:	60 e2       	ldi	r22, 0x20	; 32
+ 1ac:	70 e0       	ldi	r23, 0x00	; 0
+ 1ae:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 1b2:	00 d0       	rcall	.+0      	; 0x1b4 <_ZN24ColorRecognitionTCS230PI7getBlueEv+0x24>
+ 1b4:	00 d0       	rcall	.+0      	; 0x1b6 <_ZN24ColorRecognitionTCS230PI7getBlueEv+0x26>
+ 1b6:	f8 01       	movw	r30, r16
+ 1b8:	25 85       	ldd	r18, Z+13	; 0x0d
+ 1ba:	36 85       	ldd	r19, Z+14	; 0x0e
+ 1bc:	47 85       	ldd	r20, Z+15	; 0x0f
+ 1be:	50 89       	ldd	r21, Z+16	; 0x10
+ 1c0:	e1 8c       	ldd	r14, Z+25	; 0x19
+ 1c2:	f2 8c       	ldd	r15, Z+26	; 0x1a
+ 1c4:	03 8d       	ldd	r16, Z+27	; 0x1b
+ 1c6:	14 8d       	ldd	r17, Z+28	; 0x1c
+ 1c8:	ef ef       	ldi	r30, 0xFF	; 255
+ 1ca:	ae 2e       	mov	r10, r30
+ 1cc:	b1 2c       	mov	r11, r1
+ 1ce:	c1 2c       	mov	r12, r1
+ 1d0:	d1 2c       	mov	r13, r1
+ 1d2:	ed b7       	in	r30, 0x3d	; 61
+ 1d4:	fe b7       	in	r31, 0x3e	; 62
+ 1d6:	a1 82       	std	Z+1, r10	; 0x01
+ 1d8:	b2 82       	std	Z+2, r11	; 0x02
+ 1da:	c3 82       	std	Z+3, r12	; 0x03
+ 1dc:	d4 82       	std	Z+4, r13	; 0x04
+ 1de:	aa 24       	eor	r10, r10
+ 1e0:	bb 24       	eor	r11, r11
+ 1e2:	65 01       	movw	r12, r10
+ 1e4:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 1e8:	86 2f       	mov	r24, r22
+ 1ea:	0f 90       	pop	r0
+ 1ec:	0f 90       	pop	r0
+ 1ee:	0f 90       	pop	r0
+ 1f0:	0f 90       	pop	r0
+ 1f2:	1f 91       	pop	r17
+ 1f4:	0f 91       	pop	r16
+ 1f6:	ff 90       	pop	r15
+ 1f8:	ef 90       	pop	r14
+ 1fa:	df 90       	pop	r13
+ 1fc:	cf 90       	pop	r12
+ 1fe:	bf 90       	pop	r11
+ 200:	af 90       	pop	r10
+ 202:	08 95       	ret
+
+00000204 <_ZN24ColorRecognitionTCS230PI8getGreenEv>:
+ 204:	af 92       	push	r10
+ 206:	bf 92       	push	r11
+ 208:	cf 92       	push	r12
+ 20a:	df 92       	push	r13
+ 20c:	ef 92       	push	r14
+ 20e:	ff 92       	push	r15
+ 210:	0f 93       	push	r16
+ 212:	1f 93       	push	r17
+ 214:	8c 01       	movw	r16, r24
+ 216:	61 e0       	ldi	r22, 0x01	; 1
+ 218:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 21c:	c8 01       	movw	r24, r16
+ 21e:	60 e2       	ldi	r22, 0x20	; 32
+ 220:	70 e0       	ldi	r23, 0x00	; 0
+ 222:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 226:	00 d0       	rcall	.+0      	; 0x228 <_ZN24ColorRecognitionTCS230PI8getGreenEv+0x24>
+ 228:	00 d0       	rcall	.+0      	; 0x22a <_ZN24ColorRecognitionTCS230PI8getGreenEv+0x26>
+ 22a:	f8 01       	movw	r30, r16
+ 22c:	21 85       	ldd	r18, Z+9	; 0x09
+ 22e:	32 85       	ldd	r19, Z+10	; 0x0a
+ 230:	43 85       	ldd	r20, Z+11	; 0x0b
+ 232:	54 85       	ldd	r21, Z+12	; 0x0c
+ 234:	e5 88       	ldd	r14, Z+21	; 0x15
+ 236:	f6 88       	ldd	r15, Z+22	; 0x16
+ 238:	07 89       	ldd	r16, Z+23	; 0x17
+ 23a:	10 8d       	ldd	r17, Z+24	; 0x18
+ 23c:	ff ef       	ldi	r31, 0xFF	; 255
+ 23e:	af 2e       	mov	r10, r31
+ 240:	b1 2c       	mov	r11, r1
+ 242:	c1 2c       	mov	r12, r1
+ 244:	d1 2c       	mov	r13, r1
+ 246:	ed b7       	in	r30, 0x3d	; 61
+ 248:	fe b7       	in	r31, 0x3e	; 62
+ 24a:	a1 82       	std	Z+1, r10	; 0x01
+ 24c:	b2 82       	std	Z+2, r11	; 0x02
+ 24e:	c3 82       	std	Z+3, r12	; 0x03
+ 250:	d4 82       	std	Z+4, r13	; 0x04
+ 252:	aa 24       	eor	r10, r10
+ 254:	bb 24       	eor	r11, r11
+ 256:	65 01       	movw	r12, r10
+ 258:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 25c:	86 2f       	mov	r24, r22
+ 25e:	0f 90       	pop	r0
+ 260:	0f 90       	pop	r0
+ 262:	0f 90       	pop	r0
+ 264:	0f 90       	pop	r0
+ 266:	1f 91       	pop	r17
+ 268:	0f 91       	pop	r16
+ 26a:	ff 90       	pop	r15
+ 26c:	ef 90       	pop	r14
+ 26e:	df 90       	pop	r13
+ 270:	cf 90       	pop	r12
+ 272:	bf 90       	pop	r11
+ 274:	af 90       	pop	r10
+ 276:	08 95       	ret
+
+00000278 <_ZN24ColorRecognitionTCS230PI6getRedEv>:
+ 278:	af 92       	push	r10
+ 27a:	bf 92       	push	r11
+ 27c:	cf 92       	push	r12
+ 27e:	df 92       	push	r13
+ 280:	ef 92       	push	r14
+ 282:	ff 92       	push	r15
+ 284:	0f 93       	push	r16
+ 286:	1f 93       	push	r17
+ 288:	8c 01       	movw	r16, r24
+ 28a:	60 e0       	ldi	r22, 0x00	; 0
+ 28c:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 290:	c8 01       	movw	r24, r16
+ 292:	60 e2       	ldi	r22, 0x20	; 32
+ 294:	70 e0       	ldi	r23, 0x00	; 0
+ 296:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 29a:	00 d0       	rcall	.+0      	; 0x29c <_ZN24ColorRecognitionTCS230PI6getRedEv+0x24>
+ 29c:	00 d0       	rcall	.+0      	; 0x29e <_ZN24ColorRecognitionTCS230PI6getRedEv+0x26>
+ 29e:	f8 01       	movw	r30, r16
+ 2a0:	25 81       	ldd	r18, Z+5	; 0x05
+ 2a2:	36 81       	ldd	r19, Z+6	; 0x06
+ 2a4:	47 81       	ldd	r20, Z+7	; 0x07
+ 2a6:	50 85       	ldd	r21, Z+8	; 0x08
+ 2a8:	e1 88       	ldd	r14, Z+17	; 0x11
+ 2aa:	f2 88       	ldd	r15, Z+18	; 0x12
+ 2ac:	03 89       	ldd	r16, Z+19	; 0x13
+ 2ae:	14 89       	ldd	r17, Z+20	; 0x14
+ 2b0:	af ef       	ldi	r26, 0xFF	; 255
+ 2b2:	aa 2e       	mov	r10, r26
+ 2b4:	b1 2c       	mov	r11, r1
+ 2b6:	c1 2c       	mov	r12, r1
+ 2b8:	d1 2c       	mov	r13, r1
+ 2ba:	ed b7       	in	r30, 0x3d	; 61
+ 2bc:	fe b7       	in	r31, 0x3e	; 62
+ 2be:	a1 82       	std	Z+1, r10	; 0x01
+ 2c0:	b2 82       	std	Z+2, r11	; 0x02
+ 2c2:	c3 82       	std	Z+3, r12	; 0x03
+ 2c4:	d4 82       	std	Z+4, r13	; 0x04
+ 2c6:	aa 24       	eor	r10, r10
+ 2c8:	bb 24       	eor	r11, r11
+ 2ca:	65 01       	movw	r12, r10
+ 2cc:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 2d0:	86 2f       	mov	r24, r22
+ 2d2:	0f 90       	pop	r0
+ 2d4:	0f 90       	pop	r0
+ 2d6:	0f 90       	pop	r0
+ 2d8:	0f 90       	pop	r0
+ 2da:	1f 91       	pop	r17
+ 2dc:	0f 91       	pop	r16
+ 2de:	ff 90       	pop	r15
+ 2e0:	ef 90       	pop	r14
+ 2e2:	df 90       	pop	r13
+ 2e4:	cf 90       	pop	r12
+ 2e6:	bf 90       	pop	r11
+ 2e8:	af 90       	pop	r10
+ 2ea:	08 95       	ret
+
+000002ec <_ZN24ColorRecognitionTCS230PIC1Ehhh>:
+ 2ec:	ef 92       	push	r14
+ 2ee:	ff 92       	push	r15
+ 2f0:	0f 93       	push	r16
+ 2f2:	1f 93       	push	r17
+ 2f4:	8c 01       	movw	r16, r24
+ 2f6:	e6 2e       	mov	r14, r22
+ 2f8:	84 2f       	mov	r24, r20
+ 2fa:	f2 2e       	mov	r15, r18
+ 2fc:	20 e0       	ldi	r18, 0x00	; 0
+ 2fe:	30 e0       	ldi	r19, 0x00	; 0
+ 300:	f8 01       	movw	r30, r16
+ 302:	31 83       	std	Z+1, r19	; 0x01
+ 304:	20 83       	st	Z, r18
+ 306:	42 83       	std	Z+2, r20	; 0x02
+ 308:	f3 82       	std	Z+3, r15	; 0x03
+ 30a:	64 83       	std	Z+4, r22	; 0x04
+ 30c:	61 e0       	ldi	r22, 0x01	; 1
+ 30e:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 312:	8f 2d       	mov	r24, r15
+ 314:	61 e0       	ldi	r22, 0x01	; 1
+ 316:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 31a:	8e 2d       	mov	r24, r14
+ 31c:	60 e0       	ldi	r22, 0x00	; 0
+ 31e:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 322:	f8 01       	movw	r30, r16
+ 324:	15 82       	std	Z+5, r1	; 0x05
+ 326:	16 82       	std	Z+6, r1	; 0x06
+ 328:	17 82       	std	Z+7, r1	; 0x07
+ 32a:	10 86       	std	Z+8, r1	; 0x08
+ 32c:	88 ee       	ldi	r24, 0xE8	; 232
+ 32e:	93 e0       	ldi	r25, 0x03	; 3
+ 330:	a0 e0       	ldi	r26, 0x00	; 0
+ 332:	b0 e0       	ldi	r27, 0x00	; 0
+ 334:	81 8b       	std	Z+17, r24	; 0x11
+ 336:	92 8b       	std	Z+18, r25	; 0x12
+ 338:	a3 8b       	std	Z+19, r26	; 0x13
+ 33a:	b4 8b       	std	Z+20, r27	; 0x14
+ 33c:	11 86       	std	Z+9, r1	; 0x09
+ 33e:	12 86       	std	Z+10, r1	; 0x0a
+ 340:	13 86       	std	Z+11, r1	; 0x0b
+ 342:	14 86       	std	Z+12, r1	; 0x0c
+ 344:	85 8b       	std	Z+21, r24	; 0x15
+ 346:	96 8b       	std	Z+22, r25	; 0x16
+ 348:	a7 8b       	std	Z+23, r26	; 0x17
+ 34a:	b0 8f       	std	Z+24, r27	; 0x18
+ 34c:	15 86       	std	Z+13, r1	; 0x0d
+ 34e:	16 86       	std	Z+14, r1	; 0x0e
+ 350:	17 86       	std	Z+15, r1	; 0x0f
+ 352:	10 8a       	std	Z+16, r1	; 0x10
+ 354:	81 8f       	std	Z+25, r24	; 0x19
+ 356:	92 8f       	std	Z+26, r25	; 0x1a
+ 358:	a3 8f       	std	Z+27, r26	; 0x1b
+ 35a:	b4 8f       	std	Z+28, r27	; 0x1c
+ 35c:	1f 91       	pop	r17
+ 35e:	0f 91       	pop	r16
+ 360:	ff 90       	pop	r15
+ 362:	ef 90       	pop	r14
+ 364:	08 95       	ret
+
+00000366 <_ZN24ColorRecognitionTCS230PIC2Ehhh>:
+ 366:	ef 92       	push	r14
+ 368:	ff 92       	push	r15
+ 36a:	0f 93       	push	r16
+ 36c:	1f 93       	push	r17
+ 36e:	8c 01       	movw	r16, r24
+ 370:	e6 2e       	mov	r14, r22
+ 372:	84 2f       	mov	r24, r20
+ 374:	f2 2e       	mov	r15, r18
+ 376:	20 e0       	ldi	r18, 0x00	; 0
+ 378:	30 e0       	ldi	r19, 0x00	; 0
+ 37a:	f8 01       	movw	r30, r16
+ 37c:	31 83       	std	Z+1, r19	; 0x01
+ 37e:	20 83       	st	Z, r18
+ 380:	42 83       	std	Z+2, r20	; 0x02
+ 382:	f3 82       	std	Z+3, r15	; 0x03
+ 384:	64 83       	std	Z+4, r22	; 0x04
+ 386:	61 e0       	ldi	r22, 0x01	; 1
+ 388:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 38c:	8f 2d       	mov	r24, r15
+ 38e:	61 e0       	ldi	r22, 0x01	; 1
+ 390:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 394:	8e 2d       	mov	r24, r14
+ 396:	60 e0       	ldi	r22, 0x00	; 0
+ 398:	0e 94 00 00 	call	0	; 0x0 <_ZN24ColorRecognitionTCS230PI7fillRGBEPh>
+ 39c:	f8 01       	movw	r30, r16
+ 39e:	15 82       	std	Z+5, r1	; 0x05
+ 3a0:	16 82       	std	Z+6, r1	; 0x06
+ 3a2:	17 82       	std	Z+7, r1	; 0x07
+ 3a4:	10 86       	std	Z+8, r1	; 0x08
+ 3a6:	88 ee       	ldi	r24, 0xE8	; 232
+ 3a8:	93 e0       	ldi	r25, 0x03	; 3
+ 3aa:	a0 e0       	ldi	r26, 0x00	; 0
+ 3ac:	b0 e0       	ldi	r27, 0x00	; 0
+ 3ae:	81 8b       	std	Z+17, r24	; 0x11
+ 3b0:	92 8b       	std	Z+18, r25	; 0x12
+ 3b2:	a3 8b       	std	Z+19, r26	; 0x13
+ 3b4:	b4 8b       	std	Z+20, r27	; 0x14
+ 3b6:	11 86       	std	Z+9, r1	; 0x09
+ 3b8:	12 86       	std	Z+10, r1	; 0x0a
+ 3ba:	13 86       	std	Z+11, r1	; 0x0b
+ 3bc:	14 86       	std	Z+12, r1	; 0x0c
+ 3be:	85 8b       	std	Z+21, r24	; 0x15
+ 3c0:	96 8b       	std	Z+22, r25	; 0x16
+ 3c2:	a7 8b       	std	Z+23, r26	; 0x17
+ 3c4:	b0 8f       	std	Z+24, r27	; 0x18
+ 3c6:	15 86       	std	Z+13, r1	; 0x0d
+ 3c8:	16 86       	std	Z+14, r1	; 0x0e
+ 3ca:	17 86       	std	Z+15, r1	; 0x0f
+ 3cc:	10 8a       	std	Z+16, r1	; 0x10
+ 3ce:	81 8f       	std	Z+25, r24	; 0x19
+ 3d0:	92 8f       	std	Z+26, r25	; 0x1a
+ 3d2:	a3 8f       	std	Z+27, r26	; 0x1b
+ 3d4:	b4 8f       	std	Z+28, r27	; 0x1c
+ 3d6:	1f 91       	pop	r17
+ 3d8:	0f 91       	pop	r16
+ 3da:	ff 90       	pop	r15
+ 3dc:	ef 90       	pop	r14
+ 3de:	08 95       	ret
+
+ColorRecognitionTCS230.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000328  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000018  00000000  00000000  0000035c  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, DATA
+  2 .bss          00000014  00000000  00000000  00000374  2**0
+                  ALLOC
+  3 .ctors        00000002  00000000  00000000  00000374  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+Disassembly of section .text:
+
+00000000 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>:
+   0:	80 91 00 00 	lds	r24, 0x0000
+   4:	90 91 00 00 	lds	r25, 0x0000
+   8:	01 96       	adiw	r24, 0x01	; 1
+   a:	90 93 00 00 	sts	0x0000, r25
+   e:	80 93 00 00 	sts	0x0000, r24
+  12:	08 95       	ret
+
+00000014 <_ZN22ColorRecognitionTCS2307fillRGBEPh>:
+  14:	ef 92       	push	r14
+  16:	ff 92       	push	r15
+  18:	0f 93       	push	r16
+  1a:	1f 93       	push	r17
+  1c:	8c 01       	movw	r16, r24
+  1e:	7b 01       	movw	r14, r22
+  20:	dc 01       	movw	r26, r24
+  22:	ed 91       	ld	r30, X+
+  24:	fc 91       	ld	r31, X
+  26:	01 90       	ld	r0, Z+
+  28:	f0 81       	ld	r31, Z
+  2a:	e0 2d       	mov	r30, r0
+  2c:	09 95       	icall
+  2e:	f7 01       	movw	r30, r14
+  30:	80 83       	st	Z, r24
+  32:	d8 01       	movw	r26, r16
+  34:	ed 91       	ld	r30, X+
+  36:	fc 91       	ld	r31, X
+  38:	02 80       	ldd	r0, Z+2	; 0x02
+  3a:	f3 81       	ldd	r31, Z+3	; 0x03
+  3c:	e0 2d       	mov	r30, r0
+  3e:	c8 01       	movw	r24, r16
+  40:	09 95       	icall
+  42:	f7 01       	movw	r30, r14
+  44:	81 83       	std	Z+1, r24	; 0x01
+  46:	d8 01       	movw	r26, r16
+  48:	ed 91       	ld	r30, X+
+  4a:	fc 91       	ld	r31, X
+  4c:	04 80       	ldd	r0, Z+4	; 0x04
+  4e:	f5 81       	ldd	r31, Z+5	; 0x05
+  50:	e0 2d       	mov	r30, r0
+  52:	c8 01       	movw	r24, r16
+  54:	09 95       	icall
+  56:	f7 01       	movw	r30, r14
+  58:	82 83       	std	Z+2, r24	; 0x02
+  5a:	81 e0       	ldi	r24, 0x01	; 1
+  5c:	1f 91       	pop	r17
+  5e:	0f 91       	pop	r16
+  60:	ff 90       	pop	r15
+  62:	ef 90       	pop	r14
+  64:	08 95       	ret
+
+00000066 <_GLOBAL__I__ZN22ColorRecognitionTCS2308instanceE>:
+  66:	80 e0       	ldi	r24, 0x00	; 0
+  68:	90 e0       	ldi	r25, 0x00	; 0
+  6a:	90 93 00 00 	sts	0x0000, r25
+  6e:	80 93 00 00 	sts	0x0000, r24
+  72:	88 ee       	ldi	r24, 0xE8	; 232
+  74:	93 e0       	ldi	r25, 0x03	; 3
+  76:	90 93 00 00 	sts	0x0000, r25
+  7a:	80 93 00 00 	sts	0x0000, r24
+  7e:	90 93 00 00 	sts	0x0000, r25
+  82:	80 93 00 00 	sts	0x0000, r24
+  86:	90 93 00 00 	sts	0x0000, r25
+  8a:	80 93 00 00 	sts	0x0000, r24
+  8e:	08 95       	ret
+
+00000090 <_ZN22ColorRecognitionTCS2309setFilterENS_6FilterE>:
+  90:	1f 93       	push	r17
+  92:	18 2f       	mov	r17, r24
+  94:	80 93 00 00 	sts	0x0000, r24
+  98:	83 30       	cpi	r24, 0x03	; 3
+  9a:	01 f0       	breq	.+0      	; 0x9c <_ZN22ColorRecognitionTCS2309setFilterENS_6FilterE+0xc>
+  9c:	60 e0       	ldi	r22, 0x00	; 0
+  9e:	81 30       	cpi	r24, 0x01	; 1
+  a0:	01 f4       	brne	.+0      	; 0xa2 <_ZN22ColorRecognitionTCS2309setFilterENS_6FilterE+0x12>
+  a2:	61 e0       	ldi	r22, 0x01	; 1
+  a4:	80 91 00 00 	lds	r24, 0x0000
+  a8:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+  ac:	60 e0       	ldi	r22, 0x00	; 0
+  ae:	11 50       	subi	r17, 0x01	; 1
+  b0:	12 30       	cpi	r17, 0x02	; 2
+  b2:	00 f4       	brcc	.+0      	; 0xb4 <_ZN22ColorRecognitionTCS2309setFilterENS_6FilterE+0x24>
+  b4:	61 e0       	ldi	r22, 0x01	; 1
+  b6:	80 91 00 00 	lds	r24, 0x0000
+  ba:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+  be:	1f 91       	pop	r17
+  c0:	08 95       	ret
+
+000000c2 <_ZN22ColorRecognitionTCS2307getBlueEv>:
+  c2:	af 92       	push	r10
+  c4:	bf 92       	push	r11
+  c6:	cf 92       	push	r12
+  c8:	df 92       	push	r13
+  ca:	ef 92       	push	r14
+  cc:	ff 92       	push	r15
+  ce:	0f 93       	push	r16
+  d0:	1f 93       	push	r17
+  d2:	fc 01       	movw	r30, r24
+  d4:	00 d0       	rcall	.+0      	; 0xd6 <_ZN22ColorRecognitionTCS2307getBlueEv+0x14>
+  d6:	00 d0       	rcall	.+0      	; 0xd8 <_ZN22ColorRecognitionTCS2307getBlueEv+0x16>
+  d8:	63 85       	ldd	r22, Z+11	; 0x0b
+  da:	74 85       	ldd	r23, Z+12	; 0x0c
+  dc:	88 27       	eor	r24, r24
+  de:	77 fd       	sbrc	r23, 7
+  e0:	80 95       	com	r24
+  e2:	98 2f       	mov	r25, r24
+  e4:	e1 88       	ldd	r14, Z+17	; 0x11
+  e6:	f2 88       	ldd	r15, Z+18	; 0x12
+  e8:	00 27       	eor	r16, r16
+  ea:	f7 fc       	sbrc	r15, 7
+  ec:	00 95       	com	r16
+  ee:	10 2f       	mov	r17, r16
+  f0:	2f ef       	ldi	r18, 0xFF	; 255
+  f2:	30 e0       	ldi	r19, 0x00	; 0
+  f4:	40 e0       	ldi	r20, 0x00	; 0
+  f6:	50 e0       	ldi	r21, 0x00	; 0
+  f8:	ed b7       	in	r30, 0x3d	; 61
+  fa:	fe b7       	in	r31, 0x3e	; 62
+  fc:	21 83       	std	Z+1, r18	; 0x01
+  fe:	32 83       	std	Z+2, r19	; 0x02
+ 100:	43 83       	std	Z+3, r20	; 0x03
+ 102:	54 83       	std	Z+4, r21	; 0x04
+ 104:	20 e0       	ldi	r18, 0x00	; 0
+ 106:	30 e0       	ldi	r19, 0x00	; 0
+ 108:	40 e0       	ldi	r20, 0x00	; 0
+ 10a:	50 e0       	ldi	r21, 0x00	; 0
+ 10c:	aa 24       	eor	r10, r10
+ 10e:	bb 24       	eor	r11, r11
+ 110:	65 01       	movw	r12, r10
+ 112:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 116:	86 2f       	mov	r24, r22
+ 118:	0f 90       	pop	r0
+ 11a:	0f 90       	pop	r0
+ 11c:	0f 90       	pop	r0
+ 11e:	0f 90       	pop	r0
+ 120:	1f 91       	pop	r17
+ 122:	0f 91       	pop	r16
+ 124:	ff 90       	pop	r15
+ 126:	ef 90       	pop	r14
+ 128:	df 90       	pop	r13
+ 12a:	cf 90       	pop	r12
+ 12c:	bf 90       	pop	r11
+ 12e:	af 90       	pop	r10
+ 130:	08 95       	ret
+
+00000132 <_ZN22ColorRecognitionTCS2308getGreenEv>:
+ 132:	af 92       	push	r10
+ 134:	bf 92       	push	r11
+ 136:	cf 92       	push	r12
+ 138:	df 92       	push	r13
+ 13a:	ef 92       	push	r14
+ 13c:	ff 92       	push	r15
+ 13e:	0f 93       	push	r16
+ 140:	1f 93       	push	r17
+ 142:	fc 01       	movw	r30, r24
+ 144:	00 d0       	rcall	.+0      	; 0x146 <_ZN22ColorRecognitionTCS2308getGreenEv+0x14>
+ 146:	00 d0       	rcall	.+0      	; 0x148 <_ZN22ColorRecognitionTCS2308getGreenEv+0x16>
+ 148:	61 85       	ldd	r22, Z+9	; 0x09
+ 14a:	72 85       	ldd	r23, Z+10	; 0x0a
+ 14c:	88 27       	eor	r24, r24
+ 14e:	77 fd       	sbrc	r23, 7
+ 150:	80 95       	com	r24
+ 152:	98 2f       	mov	r25, r24
+ 154:	e7 84       	ldd	r14, Z+15	; 0x0f
+ 156:	f0 88       	ldd	r15, Z+16	; 0x10
+ 158:	00 27       	eor	r16, r16
+ 15a:	f7 fc       	sbrc	r15, 7
+ 15c:	00 95       	com	r16
+ 15e:	10 2f       	mov	r17, r16
+ 160:	2f ef       	ldi	r18, 0xFF	; 255
+ 162:	30 e0       	ldi	r19, 0x00	; 0
+ 164:	40 e0       	ldi	r20, 0x00	; 0
+ 166:	50 e0       	ldi	r21, 0x00	; 0
+ 168:	ed b7       	in	r30, 0x3d	; 61
+ 16a:	fe b7       	in	r31, 0x3e	; 62
+ 16c:	21 83       	std	Z+1, r18	; 0x01
+ 16e:	32 83       	std	Z+2, r19	; 0x02
+ 170:	43 83       	std	Z+3, r20	; 0x03
+ 172:	54 83       	std	Z+4, r21	; 0x04
+ 174:	20 e0       	ldi	r18, 0x00	; 0
+ 176:	30 e0       	ldi	r19, 0x00	; 0
+ 178:	40 e0       	ldi	r20, 0x00	; 0
+ 17a:	50 e0       	ldi	r21, 0x00	; 0
+ 17c:	aa 24       	eor	r10, r10
+ 17e:	bb 24       	eor	r11, r11
+ 180:	65 01       	movw	r12, r10
+ 182:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 186:	86 2f       	mov	r24, r22
+ 188:	0f 90       	pop	r0
+ 18a:	0f 90       	pop	r0
+ 18c:	0f 90       	pop	r0
+ 18e:	0f 90       	pop	r0
+ 190:	1f 91       	pop	r17
+ 192:	0f 91       	pop	r16
+ 194:	ff 90       	pop	r15
+ 196:	ef 90       	pop	r14
+ 198:	df 90       	pop	r13
+ 19a:	cf 90       	pop	r12
+ 19c:	bf 90       	pop	r11
+ 19e:	af 90       	pop	r10
+ 1a0:	08 95       	ret
+
+000001a2 <_ZN22ColorRecognitionTCS2306getRedEv>:
+ 1a2:	af 92       	push	r10
+ 1a4:	bf 92       	push	r11
+ 1a6:	cf 92       	push	r12
+ 1a8:	df 92       	push	r13
+ 1aa:	ef 92       	push	r14
+ 1ac:	ff 92       	push	r15
+ 1ae:	0f 93       	push	r16
+ 1b0:	1f 93       	push	r17
+ 1b2:	fc 01       	movw	r30, r24
+ 1b4:	00 d0       	rcall	.+0      	; 0x1b6 <_ZN22ColorRecognitionTCS2306getRedEv+0x14>
+ 1b6:	00 d0       	rcall	.+0      	; 0x1b8 <_ZN22ColorRecognitionTCS2306getRedEv+0x16>
+ 1b8:	67 81       	ldd	r22, Z+7	; 0x07
+ 1ba:	70 85       	ldd	r23, Z+8	; 0x08
+ 1bc:	88 27       	eor	r24, r24
+ 1be:	77 fd       	sbrc	r23, 7
+ 1c0:	80 95       	com	r24
+ 1c2:	98 2f       	mov	r25, r24
+ 1c4:	e5 84       	ldd	r14, Z+13	; 0x0d
+ 1c6:	f6 84       	ldd	r15, Z+14	; 0x0e
+ 1c8:	00 27       	eor	r16, r16
+ 1ca:	f7 fc       	sbrc	r15, 7
+ 1cc:	00 95       	com	r16
+ 1ce:	10 2f       	mov	r17, r16
+ 1d0:	2f ef       	ldi	r18, 0xFF	; 255
+ 1d2:	30 e0       	ldi	r19, 0x00	; 0
+ 1d4:	40 e0       	ldi	r20, 0x00	; 0
+ 1d6:	50 e0       	ldi	r21, 0x00	; 0
+ 1d8:	ed b7       	in	r30, 0x3d	; 61
+ 1da:	fe b7       	in	r31, 0x3e	; 62
+ 1dc:	21 83       	std	Z+1, r18	; 0x01
+ 1de:	32 83       	std	Z+2, r19	; 0x02
+ 1e0:	43 83       	std	Z+3, r20	; 0x03
+ 1e2:	54 83       	std	Z+4, r21	; 0x04
+ 1e4:	20 e0       	ldi	r18, 0x00	; 0
+ 1e6:	30 e0       	ldi	r19, 0x00	; 0
+ 1e8:	40 e0       	ldi	r20, 0x00	; 0
+ 1ea:	50 e0       	ldi	r21, 0x00	; 0
+ 1ec:	aa 24       	eor	r10, r10
+ 1ee:	bb 24       	eor	r11, r11
+ 1f0:	65 01       	movw	r12, r10
+ 1f2:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 1f6:	86 2f       	mov	r24, r22
+ 1f8:	0f 90       	pop	r0
+ 1fa:	0f 90       	pop	r0
+ 1fc:	0f 90       	pop	r0
+ 1fe:	0f 90       	pop	r0
+ 200:	1f 91       	pop	r17
+ 202:	0f 91       	pop	r16
+ 204:	ff 90       	pop	r15
+ 206:	ef 90       	pop	r14
+ 208:	df 90       	pop	r13
+ 20a:	cf 90       	pop	r12
+ 20c:	bf 90       	pop	r11
+ 20e:	af 90       	pop	r10
+ 210:	08 95       	ret
+
+00000212 <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv>:
+ 212:	80 91 00 00 	lds	r24, 0x0000
+ 216:	81 30       	cpi	r24, 0x01	; 1
+ 218:	01 f0       	breq	.+0      	; 0x21a <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x8>
+ 21a:	81 30       	cpi	r24, 0x01	; 1
+ 21c:	00 f0       	brcs	.+0      	; 0x21e <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0xc>
+ 21e:	82 30       	cpi	r24, 0x02	; 2
+ 220:	01 f0       	breq	.+0      	; 0x222 <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x10>
+ 222:	83 30       	cpi	r24, 0x03	; 3
+ 224:	01 f4       	brne	.+0      	; 0x226 <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x14>
+ 226:	00 c0       	rjmp	.+0      	; 0x228 <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x16>
+ 228:	80 91 00 00 	lds	r24, 0x0000
+ 22c:	90 91 00 00 	lds	r25, 0x0000
+ 230:	90 93 00 00 	sts	0x0000, r25
+ 234:	80 93 00 00 	sts	0x0000, r24
+ 238:	81 e0       	ldi	r24, 0x01	; 1
+ 23a:	00 c0       	rjmp	.+0      	; 0x23c <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x2a>
+ 23c:	80 91 00 00 	lds	r24, 0x0000
+ 240:	90 91 00 00 	lds	r25, 0x0000
+ 244:	90 93 00 00 	sts	0x0000, r25
+ 248:	80 93 00 00 	sts	0x0000, r24
+ 24c:	82 e0       	ldi	r24, 0x02	; 2
+ 24e:	00 c0       	rjmp	.+0      	; 0x250 <_ZN22ColorRecognitionTCS23021timerInterruptHandlerEv+0x3e>
+ 250:	80 91 00 00 	lds	r24, 0x0000
+ 254:	90 91 00 00 	lds	r25, 0x0000
+ 258:	90 93 00 00 	sts	0x0000, r25
+ 25c:	80 93 00 00 	sts	0x0000, r24
+ 260:	80 e0       	ldi	r24, 0x00	; 0
+ 262:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 266:	10 92 00 00 	sts	0x0000, r1
+ 26a:	10 92 00 00 	sts	0x0000, r1
+ 26e:	80 e0       	ldi	r24, 0x00	; 0
+ 270:	90 e0       	ldi	r25, 0x00	; 0
+ 272:	40 e4       	ldi	r20, 0x40	; 64
+ 274:	52 e4       	ldi	r21, 0x42	; 66
+ 276:	6f e0       	ldi	r22, 0x0F	; 15
+ 278:	70 e0       	ldi	r23, 0x00	; 0
+ 27a:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 27e:	08 95       	ret
+
+00000280 <_ZN22ColorRecognitionTCS23018adjustWhiteBalanceEv>:
+ 280:	60 ea       	ldi	r22, 0xA0	; 160
+ 282:	7f e0       	ldi	r23, 0x0F	; 15
+ 284:	80 e0       	ldi	r24, 0x00	; 0
+ 286:	90 e0       	ldi	r25, 0x00	; 0
+ 288:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 28c:	80 91 00 00 	lds	r24, 0x0000
+ 290:	90 91 00 00 	lds	r25, 0x0000
+ 294:	90 93 00 00 	sts	0x0000, r25
+ 298:	80 93 00 00 	sts	0x0000, r24
+ 29c:	80 91 00 00 	lds	r24, 0x0000
+ 2a0:	90 91 00 00 	lds	r25, 0x0000
+ 2a4:	90 93 00 00 	sts	0x0000, r25
+ 2a8:	80 93 00 00 	sts	0x0000, r24
+ 2ac:	80 91 00 00 	lds	r24, 0x0000
+ 2b0:	90 91 00 00 	lds	r25, 0x0000
+ 2b4:	90 93 00 00 	sts	0x0000, r25
+ 2b8:	80 93 00 00 	sts	0x0000, r24
+ 2bc:	08 95       	ret
+
+000002be <_ZN22ColorRecognitionTCS23010initializeEhhh>:
+ 2be:	ff 92       	push	r15
+ 2c0:	0f 93       	push	r16
+ 2c2:	1f 93       	push	r17
+ 2c4:	fc 01       	movw	r30, r24
+ 2c6:	f6 2e       	mov	r15, r22
+ 2c8:	84 2f       	mov	r24, r20
+ 2ca:	12 2f       	mov	r17, r18
+ 2cc:	42 83       	std	Z+2, r20	; 0x02
+ 2ce:	23 83       	std	Z+3, r18	; 0x03
+ 2d0:	64 83       	std	Z+4, r22	; 0x04
+ 2d2:	93 e0       	ldi	r25, 0x03	; 3
+ 2d4:	93 8b       	std	Z+19, r25	; 0x13
+ 2d6:	61 e0       	ldi	r22, 0x01	; 1
+ 2d8:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 2dc:	81 2f       	mov	r24, r17
+ 2de:	61 e0       	ldi	r22, 0x01	; 1
+ 2e0:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 2e4:	8f 2d       	mov	r24, r15
+ 2e6:	60 e0       	ldi	r22, 0x00	; 0
+ 2e8:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 2ec:	00 e0       	ldi	r16, 0x00	; 0
+ 2ee:	10 e0       	ldi	r17, 0x00	; 0
+ 2f0:	c8 01       	movw	r24, r16
+ 2f2:	40 e4       	ldi	r20, 0x40	; 64
+ 2f4:	52 e4       	ldi	r21, 0x42	; 66
+ 2f6:	6f e0       	ldi	r22, 0x0F	; 15
+ 2f8:	70 e0       	ldi	r23, 0x00	; 0
+ 2fa:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 2fe:	c8 01       	movw	r24, r16
+ 300:	60 e0       	ldi	r22, 0x00	; 0
+ 302:	70 e0       	ldi	r23, 0x00	; 0
+ 304:	2f ef       	ldi	r18, 0xFF	; 255
+ 306:	3f ef       	ldi	r19, 0xFF	; 255
+ 308:	4f ef       	ldi	r20, 0xFF	; 255
+ 30a:	5f ef       	ldi	r21, 0xFF	; 255
+ 30c:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 310:	8f 2d       	mov	r24, r15
+ 312:	82 50       	subi	r24, 0x02	; 2
+ 314:	60 e0       	ldi	r22, 0x00	; 0
+ 316:	70 e0       	ldi	r23, 0x00	; 0
+ 318:	43 e0       	ldi	r20, 0x03	; 3
+ 31a:	50 e0       	ldi	r21, 0x00	; 0
+ 31c:	0e 94 00 00 	call	0	; 0x0 <_ZN22ColorRecognitionTCS23024externalInterruptHandlerEv>
+ 320:	1f 91       	pop	r17
+ 322:	0f 91       	pop	r16
+ 324:	ff 90       	pop	r15
+ 326:	08 95       	ret
+
+ColorRecognition.o:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00000000  00000000  00000034  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000034  2**0
+                  ALLOC
