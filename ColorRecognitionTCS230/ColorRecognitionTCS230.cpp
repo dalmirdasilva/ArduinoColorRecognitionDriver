@@ -34,7 +34,6 @@ void ColorRecognitionTCS230::adjustWhiteBalance() {
     instance.whiteBalanceFrequencies[0] = instance.lastFrequencies[0];
     instance.whiteBalanceFrequencies[1] = instance.lastFrequencies[1];
     instance.whiteBalanceFrequencies[2] = instance.lastFrequencies[2];
-
 }
 
 void ColorRecognitionTCS230::externalInterruptHandler() {

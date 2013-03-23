@@ -172,11 +172,12 @@ public:
      * The out pin generates a square wave, we sum the times between the raise 
      * edge and divide by the number of samples.
      * 
+     * <pre>
      *        1       2       3
      * ----   -----   -----   -----
      *    |   |   |   |   |   |
      *    -----   -----   -----
-     * 
+     * </pre>
      * 
      * @return          The pin frequency.
      */
