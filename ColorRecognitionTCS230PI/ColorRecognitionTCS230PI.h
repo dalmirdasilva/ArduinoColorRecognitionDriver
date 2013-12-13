@@ -76,7 +76,11 @@
  * present in an area over a given time period. 
  */
 
-#define SAMPLES   32
+#define TCS230_RED_INDEX    0
+#define TCS230_BLUE_INDEX   0
+#define TCS230_GREEN_INDEX  0
+#define TCS230_DEBUG        1
+#define TCS230_SAMPLES      32
 
 class ColorRecognitionTCS230PI : public ColorRecognition {
 private:

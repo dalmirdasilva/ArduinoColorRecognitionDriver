@@ -43,17 +43,35 @@ void ColorRecognitionTCS230PI::adjustBlackBalance() {
 
 unsigned char ColorRecognitionTCS230PI::getRed() {
     setFilter(RED_FILTER);
-    return (unsigned char) map(getFrequency(SAMPLES), minFrequency[0], maxFrequency[0], 0, 255);
+    return (unsigned char) map(
+        getFrequency(TCS230_SAMPLES), 
+        minFrequency[TCS230_RED_INDEX], 
+        maxFrequency[TCS230_RED_INDEX], 
+        0, 
+        255
+    );
 }
 
 unsigned char ColorRecognitionTCS230PI::getGreen() {
     setFilter(GREEN_FILTER);
-    return (unsigned char) map(getFrequency(SAMPLES), minFrequency[1], maxFrequency[1], 0, 255);
+    return (unsigned char) map(
+        getFrequency(TCS230_SAMPLES), 
+        minFrequency[TCS230_BLUE_INDEX], 
+        maxFrequency[TCS230_BLUE_INDEX], 
+        0, 
+        255
+    );
 }
 
 unsigned char ColorRecognitionTCS230PI::getBlue() {
     setFilter(BLUE_FILTER);
-    return (unsigned char) map(getFrequency(SAMPLES), minFrequency[2], maxFrequency[2], 0, 255);
+    return (unsigned char) map(
+        getFrequency(TCS230_SAMPLES), 
+        minFrequency[TCS230_GREEN_INDEX], 
+        maxFrequency[TCS230_GREEN_INDEX], 
+        0, 
+        255
+    );
 }
 
 bool ColorRecognitionTCS230PI::fillRGB(unsigned char buf[3]) {
@@ -78,7 +96,7 @@ void ColorRecognitionTCS230PI::setFilter(Filter filter) {
 long ColorRecognitionTCS230PI::getFrequency(unsigned int samples) {
     long frequency = 0;
     for (unsigned int i = 0; i < samples; i++) {
-        frequency += 500000 / pulseIn(outPin, HIGH, 250000);
+        frequency += 500000UL / pulseIn(outPin, HIGH, 250000UL);
     }
     return frequency / samples;
 }
