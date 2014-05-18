@@ -48,6 +48,9 @@
 							<tool id="de.innot.avreclipse.tool.size.winavr.lib.release.1432136580" name="Print Size" superClass="de.innot.avreclipse.tool.size.winavr.lib.release"/>
 						</toolChain>
 					</folderInfo>
+					<sourceEntries>
+						<entry excluding="ColorRecognitionTCS230/examples|ColorRecognitionTCS230PI/examples" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
@@ -75,4 +78,5 @@
 		<resource resourceType="PROJECT" workspacePath="/ArduinoColorRecognitionSensor"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>

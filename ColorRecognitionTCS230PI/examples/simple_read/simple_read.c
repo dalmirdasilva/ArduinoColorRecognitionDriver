@@ -9,13 +9,13 @@ void setup() {
   
   Serial.println("Adjust white color, show something white to the sensor and press y."); 
   while(!Serial.available() && Serial.read() != 'y');
-  Serial.read(); // just read the 'enter'
+  Serial.read();
   Serial.println("Adjusting...");
   tcs230.adjustWhiteBalance();
   
   Serial.println("Adjust black color, show something black to the sensor and press y."); 
   while(!Serial.available() && Serial.read() != 'y');
-  Serial.read(); // just read the 'enter'
+  Serial.read();
   Serial.println("Adjusting...");
   tcs230.adjustBlackBalance();
   
