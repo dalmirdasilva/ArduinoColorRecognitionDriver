@@ -63,14 +63,23 @@ void ColorRecognitionTCS230::timerInterruptHandler() {
 }
 
 unsigned char ColorRecognitionTCS230::getRed() {
+	if (lastFrequencies[0]>whiteBalanceFrequencies[0]) { 
+		return 255; 
+	}
     return (unsigned char) map(lastFrequencies[0], 0, whiteBalanceFrequencies[0], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230::getGreen() {
+	if (lastFrequencies[1]>whiteBalanceFrequencies[1]) { 
+		return 255; 
+	}
     return (unsigned char) map(lastFrequencies[1], 0, whiteBalanceFrequencies[1], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230::getBlue() {
+	if (lastFrequencies[2]>whiteBalanceFrequencies[2]) { 
+		return 255; 
+	}
     return (unsigned char) map(lastFrequencies[2], 0, whiteBalanceFrequencies[2], 0, 255);
 }
 
