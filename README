@@ -1,0 +1,9 @@
+Arduino Color Sensor Driver
+================
+
+Arduino Distance Driver is a driver for Arduino(http://www.arduino.cc/). 
+It is developed in C++. 
+
+You can find the documentation in
+
+	http://www.arduinoio.com/arduino/driver/sensor/color/doc/html

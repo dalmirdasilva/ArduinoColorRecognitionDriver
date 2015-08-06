@@ -1,0 +1,22 @@
+########################################################################
+# Syntax Coloring Map For ColorRecognitionTCS230
+########################################################################
+
+########################################################################
+# Datatypes (KEYWORD1)
+########################################################################
+
+ColorRecognitionTCS230	KEYWORD1
+Filter  KEYWORD1
+
+########################################################################
+# Methods and Functions (KEYWORD2)
+########################################################################
+
+getRed	KEYWORD2
+getGreen	KEYWORD2
+getBlue	KEYWORD2
+fillRGB	KEYWORD2
+adjustWhiteBalance  KEYWORD2
+initialize  KEYWORD2
+getInstance KEYWORD2
