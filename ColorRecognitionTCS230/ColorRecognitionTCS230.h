@@ -157,6 +157,9 @@ public:
         return &ColorRecognitionTCS230::instance;
     }
 
+    virtual ~ColorRecognitionTCS230() {
+    }
+
     /**
      * Initializes the IO and timers.
      * 
@@ -225,7 +228,7 @@ private:
      * Private constructor.
      */
     ColorRecognitionTCS230()
-            : count(0), currentFilter(CLEAR_FILTER), outPin(0), s2Pin(0), s3Pin(0) {
+            : s2Pin(0), s3Pin(0), outPin(0), count(0), currentFilter(CLEAR_FILTER) {
         whiteBalanceFrequencies[0] = MAX_FRQUENCY_IN_HZ;
         whiteBalanceFrequencies[1] = MAX_FRQUENCY_IN_HZ;
         whiteBalanceFrequencies[2] = MAX_FRQUENCY_IN_HZ;
