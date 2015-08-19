@@ -12,6 +12,7 @@
 #define __ARDUINO_DRIVER_COLOR_RECOGNITION_H__ 1
 
 class ColorRecognition {
+
 public:
 
     /**

@@ -12,6 +12,8 @@
 #define __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_CPP__ 1
 
 #include "ColorRecognitionTCS230.h"
+#include <Arduino.h>
+#include <TimerOne.h>
 
 ColorRecognitionTCS230 ColorRecognitionTCS230::instance;
 

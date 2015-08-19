@@ -11,8 +11,6 @@
 #ifndef __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_H__
 #define __ARDUINO_DRIVER_COLOR_RECOGNITION_TCS230_H__ 1
 
-#include <Arduino.h>
-#include <TimerOne.h>
 #include <ColorRecognition.h>
 
 /**
@@ -93,7 +91,7 @@
  */
 #define MAX_FRQUENCY_IN_HZ 1000
 
-class ColorRecognitionTCS230 : public ColorRecognition {
+class ColorRecognitionTCS230: public ColorRecognition {
 private:
 
     /**
@@ -139,7 +137,10 @@ public:
      * Filter color enumeration.
      */
     enum Filter {
-        RED_FILTER, GREEN_FILTER, BLUE_FILTER, CLEAR_FILTER
+        RED_FILTER,
+        GREEN_FILTER,
+        BLUE_FILTER,
+        CLEAR_FILTER
     };
 
     /**
@@ -166,8 +167,7 @@ public:
      * 
      * @return 
      */
-    void initialize(unsigned char outPin, unsigned char s2Pin,
-            unsigned char s3Pin);
+    void initialize(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin);
 
     /**
      * Store the current read as the maximum frequency for each color.
@@ -224,7 +224,8 @@ private:
     /**
      * Private constructor.
      */
-    ColorRecognitionTCS230() {
+    ColorRecognitionTCS230()
+            : count(0), currentFilter(CLEAR_FILTER), outPin(0), s2Pin(0), s3Pin(0) {
         whiteBalanceFrequencies[0] = MAX_FRQUENCY_IN_HZ;
         whiteBalanceFrequencies[1] = MAX_FRQUENCY_IN_HZ;
         whiteBalanceFrequencies[2] = MAX_FRQUENCY_IN_HZ;

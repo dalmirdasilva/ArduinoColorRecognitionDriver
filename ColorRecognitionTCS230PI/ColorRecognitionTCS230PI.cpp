@@ -43,25 +43,16 @@ void ColorRecognitionTCS230PI::adjustBlackBalance() {
 
 unsigned char ColorRecognitionTCS230PI::getRed() {
     setFilter(RED_FILTER);
-    if (lastFrequencies[0] > whiteBalanceFrequencies[0]) {
-        return 255;
-    }
     return (unsigned char) map(getFrequency(SAMPLES), minFrequency[0], maxFrequency[0], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230PI::getGreen() {
     setFilter(GREEN_FILTER);
-    if (lastFrequencies[1] > whiteBalanceFrequencies[1]) {
-        return 255;
-    }
     return (unsigned char) map(getFrequency(SAMPLES), minFrequency[1], maxFrequency[1], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230PI::getBlue() {
     setFilter(BLUE_FILTER);
-    if (lastFrequencies[2] > whiteBalanceFrequencies[2]) {
-        return 255;
-    }
     return (unsigned char) map(getFrequency(SAMPLES), minFrequency[2], maxFrequency[2], 0, 255);
 }
 
