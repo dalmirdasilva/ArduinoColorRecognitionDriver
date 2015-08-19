@@ -15,8 +15,7 @@
 
 ColorRecognitionTCS230 ColorRecognitionTCS230::instance;
 
-void ColorRecognitionTCS230::initialize(unsigned char outPin,
-        unsigned char s2Pin, unsigned char s3Pin) {
+void ColorRecognitionTCS230::initialize(unsigned char outPin, unsigned char s2Pin, unsigned char s3Pin) {
     this->s2Pin = s2Pin;
     this->s3Pin = s3Pin;
     this->outPin = outPin;
@@ -42,44 +41,44 @@ void ColorRecognitionTCS230::externalInterruptHandler() {
 
 void ColorRecognitionTCS230::timerInterruptHandler() {
     switch (instance.currentFilter) {
-        case CLEAR_FILTER:
-            setFilter(RED_FILTER);
-            break;
-        case RED_FILTER:
-            instance.lastFrequencies[0] = instance.count;
-            setFilter(GREEN_FILTER);
-            break;
-        case GREEN_FILTER:
-            instance.lastFrequencies[1] = instance.count;
-            setFilter(BLUE_FILTER);
-            break;
-        case BLUE_FILTER:
-            instance.lastFrequencies[2] = instance.count;
-            setFilter(RED_FILTER);
-            break;
+    case CLEAR_FILTER:
+        setFilter(RED_FILTER);
+        break;
+    case RED_FILTER:
+        instance.lastFrequencies[0] = instance.count;
+        setFilter(GREEN_FILTER);
+        break;
+    case GREEN_FILTER:
+        instance.lastFrequencies[1] = instance.count;
+        setFilter(BLUE_FILTER);
+        break;
+    case BLUE_FILTER:
+        instance.lastFrequencies[2] = instance.count;
+        setFilter(RED_FILTER);
+        break;
     }
     instance.count = 0;
     Timer1.setPeriod(1000000);
 }
 
 unsigned char ColorRecognitionTCS230::getRed() {
-	if (lastFrequencies[0]>whiteBalanceFrequencies[0]) { 
-		return 255; 
-	}
+    if (lastFrequencies[0] > whiteBalanceFrequencies[0]) {
+        return 255;
+    }
     return (unsigned char) map(lastFrequencies[0], 0, whiteBalanceFrequencies[0], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230::getGreen() {
-	if (lastFrequencies[1]>whiteBalanceFrequencies[1]) { 
-		return 255; 
-	}
+    if (lastFrequencies[1] > whiteBalanceFrequencies[1]) {
+        return 255;
+    }
     return (unsigned char) map(lastFrequencies[1], 0, whiteBalanceFrequencies[1], 0, 255);
 }
 
 unsigned char ColorRecognitionTCS230::getBlue() {
-	if (lastFrequencies[2]>whiteBalanceFrequencies[2]) { 
-		return 255; 
-	}
+    if (lastFrequencies[2] > whiteBalanceFrequencies[2]) {
+        return 255;
+    }
     return (unsigned char) map(lastFrequencies[2], 0, whiteBalanceFrequencies[2], 0, 255);
 }
 
