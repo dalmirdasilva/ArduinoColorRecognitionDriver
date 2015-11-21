@@ -5,6 +5,9 @@
  * 
  * The abstract class for the Color Recognition TCS230 sensor.
  * 
+ * Thanks https://github.com/combs for your contribution to prevent overflow
+ * when returning the frequencies.
+ * 
  * @author Dalmir da Silva <dalmirdasilva@gmail.com>
  */
 
