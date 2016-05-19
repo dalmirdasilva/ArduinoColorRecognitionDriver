@@ -37,7 +37,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ColorRecognition}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ColorRecognitionTCS230}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ColorRecognitionTCS230PI}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoTimer/TimerOne}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ArduinoTimers/TimerOne}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.cppcompiler.input.787053112" superClass="de.innot.avreclipse.cppcompiler.input"/>
 							</tool>
